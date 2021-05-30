@@ -24,6 +24,14 @@ function onBroadcast() {
         },
 	useSSL: true
       };
+	 client = new Messaging.Client("broker.emqx.io", 8084, "myclientid_ruvin123");
+ 
+ 
+  //Gets  called if the websocket/mqtt connection gets disconnected for any reason
+      client.onConnectionLost = function (responseObject) {
+        //Depending on your scenario you could implement a reconnect logic here
+       console.log("connection lost: " + responseObject.errorMessage);
+      };
 
       client.connect(options);
   
@@ -32,18 +40,7 @@ function onBroadcast() {
 };
 
 function onScreenShare() {
- startCapture(Tvideo);
- client = new Messaging.Client("broker.emqx.io", 8084, "myclientid_ruvin123");
- 
- 
-  //Gets  called if the websocket/mqtt connection gets disconnected for any reason
-      client.onConnectionLost = function (responseObject) {
-        //Depending on your scenario you could implement a reconnect logic here
-       console.log("connection lost: " + responseObject.errorMessage);
-      };
-    
- 
- 
+ startCapture(Tvideo); 
  
 };
 
