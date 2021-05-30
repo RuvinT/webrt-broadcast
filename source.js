@@ -21,7 +21,8 @@ function onBroadcast() {
         //Gets Called if the connection could not be established
         onFailure: function (message) {
           console.log("Connection failed: " + message.errorMessage);
-        }     
+        },
+	useSSL: true
       };
 
       client.connect(options);
@@ -32,7 +33,7 @@ function onBroadcast() {
 
 function onScreenShare() {
  startCapture(Tvideo);
- client = new Messaging.Client("broker.mqttdashboard.com", 8000, "myclientid_ruvin123");
+ client = new Messaging.Client("broker.emqx.io", 8084, "myclientid_ruvin123");
  
  
   //Gets  called if the websocket/mqtt connection gets disconnected for any reason
