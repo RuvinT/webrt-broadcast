@@ -65,9 +65,10 @@ const config = {
 socket.on('watcher', function (id) {
   const peerConnection = new RTCPeerConnection(config);
   peerConnections[id] = peerConnection;
+   peerConnection.addStream(Tvideo.captureStream());	
   dataChannelA = peerConnection.createDataChannel("channelA", {negotiated: true, id: 1});
   dataChannelB = peerConnection.createDataChannel("channelB", {negotiated: true, id: 2});
-  peerConnection.addStream(Tvideo.captureStream());
+ 
   peerConnection.createOffer()
       .then(sdp => peerConnection.setLocalDescription(sdp))
       .then(function () {
