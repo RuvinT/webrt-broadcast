@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Broadcaster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body style="background-color:whitesmoke;" >
+ <div style="margin-left: 50px;">  
+    <h1>This is the Broadcaster</h1>
+	
+    <video width="600" height="400" id ="videocontent" autoplay></video>
+	<br/>
+	<button onclick="onScreenShare()">Get Screen</button>
+	<button onclick="onBroadcast()">Start Broadcast</button>
+	<br/>
+	<br/>
+    <input id="myTextarea"  value ="" style="width: 30%; height =5%;margin-right: 20px;"></textarea>
+	<button onclick="onSend()">Send Message</button>
+	<br/><br><br>
+    
+	<textarea id="recieveMsg" rows="10" cols="30" value ="" style="width =200px; height =20px;margin-right: 20px;"></textarea>
+    <br/>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
+    <script src="./socket.io.js"></script>
+    <script src="source.js"></script>
+    <script src="http://www.hivemq.com/demos/websocket-client/js/mqttws31.js"></script>
+	</div>
+</body>
+
+</html>
