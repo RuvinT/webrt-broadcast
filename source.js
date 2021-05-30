@@ -21,7 +21,8 @@ function onBroadcast() {
         //Gets Called if the connection could not be established
         onFailure: function (message) {
           console.log("Connection failed: " + message.errorMessage);
-        }
+        },
+	useSSL:true      
       };
 
       client.connect(options);
