@@ -33,7 +33,7 @@ function onBroadcast() {
 
 function onScreenShare() {
  startCapture(Tvideo);
- client = new Messaging.Client("broker.mqttdashboard.com", 8000, "myclientid_ruvin123");
+ client = new Messaging.Client("https://iot.eclipse.org", 8000, "myclientid_ruvin123");
  
  
   //Gets  called if the websocket/mqtt connection gets disconnected for any reason
