@@ -911,7 +911,7 @@ Messaging = (function (global) {
         if (this.connectOptions.useSSL)
             wsurl = ["wss://", host, ":", port, "/mqtt"].join("");
         else
-            wsurl = ["ws://", host, ":", port, "/mqtt"].join("");
+            wsurl = ["wss://", host, ":", port, "/mqtt"].join("");
         this.connected = false;
         this.socket = new WebSocket(wsurl, 'mqttv3.1');
         this.socket.binaryType = 'arraybuffer';
