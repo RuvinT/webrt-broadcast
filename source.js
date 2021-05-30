@@ -120,7 +120,6 @@ socket.on('candidate', function (id, candidate) {
 socket.on('bye', function (id) {
   peerConnections[id] && peerConnections[id].close();
   delete peerConnections[id];
-  client.disconnect();
 });
 
 var displayMediaOptions = {
